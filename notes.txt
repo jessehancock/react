@@ -1,0 +1,5 @@
+There are two types of components
+1. function component
+2. class component
+
+states can be changes props cannot
