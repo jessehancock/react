@@ -11,19 +11,33 @@ module.exports = {
     module: {
       rules: [
         {
-      test: /\.scss$/,
-      use: ExtractTextPlugin.extract({
-        fallback: "style-loader",
-        use: ['css-loader', 'sass-loader']
-      })}
+          test: /\.scss$/,
+          use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: ['css-loader', 'sass-loader']
+      })
+    },
+      {
+        test: /\.js$/,
+          exclude: /node_modules/,
+          loader: "babel-loader" 
+      }
+
       ]
+    },
+    devServer: {
+      contentBase: __dirname +"dist",
+      compress: true,
+      // port: 9000, //this would make a custom port
+      stats:'errors-only', //shortens what prints out when it starts
+      open: true //opens a new window
     },
    plugins: [
      new HtmlWebpackPlugin({
       title: 'Project Demo',
-      minify: {
-        collapseWhitespace: true
-      },
+      // minify: {
+      //   collapseWhitespace: true
+      // },
       hash: true,
       template: './src/index.html', // Load a custom template (ejs by default see the FAQ for details)
     }),
