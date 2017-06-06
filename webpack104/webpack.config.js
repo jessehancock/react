@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    entry: './src/app.js',
+    entry: './src/index.js',
     output: {
         path: __dirname + '/dist',
         filename: 'app.bundle.js'
@@ -20,7 +20,7 @@ module.exports = {
       {
         test: /\.js$/,
           exclude: /node_modules/,
-          loader: "babel-loader" 
+          loader: "babel-loader"
       }
 
       ]

@@ -1,11 +1,32 @@
-const css = require('./app.scss')
-const more = require('./more.scss')
-const love = require('./love.scss');
-
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('root')
-);
+const Headline = () => {
+  return(
+    <h1 className='thing'>hello world </h1>
+  )
+}
+
+const Greetings = (props) => {
+  const {name, age} = props;
+  return(
+    // you can either do props.name or just age if you desructure props(see line 10)
+    <p>this is the {props.name} {age}</p>
+  )
+}
+
+const App = () => {
+  return(
+    <div>
+      <Headline />
+      <Greetings name="jesse" age={23}/>
+    </div>
+
+  )
+}
+
+
+
+
+
+
+export default App;
