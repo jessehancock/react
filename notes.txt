@@ -1,6 +1,6 @@
 There are two types of components
 1. function component
-2. class component
+2. class component - Use when state is being used because you need to change data.
 
-states can be changes props cannot
-test
+STATE - data that can be changed
+PROPS - data cannot be changed. This is preferred if you don't have to change data.
