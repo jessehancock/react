@@ -1,6 +1,46 @@
+to get started with create-react-app sampleApp(name whatever you would like)
+npm start get it running
+
+
+
+
 There are two types of components
 1. function component
 2. class component - Use when state is being used because you need to change data.
 
 STATE - data that can be changed
 PROPS - data cannot be changed. This is preferred if you don't have to change data.
+
+setState tells react it should re-render.
+EXAMPLE
+
+var Counter = React.createClass({
+  propTypes:{},
+  getInitialState: function(){
+   return {
+    score:0,
+    }
+  },
+  decrementScore: function(e){
+    this.setState({
+    score: (this.state.score - 1),
+  });
+  },
+  incrementScore: function(e){
+    this.setState({
+    score: (this.state.score + 1),
+  });
+  },
+
+  render: function(){
+   return (
+    <div className="counter">
+      <button className="counter-action decrement" onClick={this.decrementScore}> - </button>
+      <div className="counter-score"> {this.state.score} </div>
+      <button className="counter-action increment" onClick={this.incrementScore}> + </button>
+    </div>
+  );
+ }});
+
+ If you were to just do this.state.score += 1;
+ It would not re-render.

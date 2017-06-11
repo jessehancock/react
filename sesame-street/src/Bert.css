@@ -1,0 +1,9 @@
+.bertImage{
+  max-height: 20vh;
+  min-height: 20vh;
+}
+
+.list:hover{
+  color: red;
+  cursor: pointer;
+}
